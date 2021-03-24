@@ -1,0 +1,24 @@
+package by.training.exercise4.unit;
+
+public class BooleanLogics {
+
+    private static int countEvenNumbers(int[] numbers) {
+        int evenNumbersCounter = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                evenNumbersCounter++;
+            }
+        }
+        return evenNumbersCounter;
+    }
+
+    public static boolean checkEvenNumbersCondition(int[] inputNumbers) {
+        int evenNumbersAmount = countEvenNumbers(inputNumbers);
+        boolean result = false;
+        if (evenNumbersAmount >= 2) {
+            result = true;
+        }
+        return result;
+    }
+
+}
