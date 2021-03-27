@@ -39,12 +39,15 @@ public class Point {
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y);
+        int result = 17;
+        result = 37 * result + x;
+        result = 37 * result + y;
+        return result;
     }
 
     @Override
     public String toString() {
-        return "Point{" +
+        return getClass().getName() + "{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';
