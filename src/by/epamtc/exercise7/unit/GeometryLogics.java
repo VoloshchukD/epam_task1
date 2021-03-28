@@ -5,7 +5,7 @@ import static java.lang.Math.pow;
 
 public class GeometryLogics {
 
-    private static int countHypotenuse(int leg1, int leg2) {
+    public static int countHypotenuse(int leg1, int leg2) {
         return (int) sqrt(pow(leg1, 2) + pow(leg2, 2));
     }
 

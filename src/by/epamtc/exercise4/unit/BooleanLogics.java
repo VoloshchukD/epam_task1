@@ -2,7 +2,7 @@ package by.epamtc.exercise4.unit;
 
 public class BooleanLogics {
 
-    private static int countEvenNumbers(int[] numbers) {
+    public static int countEvenNumbers(int[] numbers) {
         int evenNumbersCounter = 0;
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] % 2 == 0) {

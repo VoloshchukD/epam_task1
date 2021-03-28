@@ -4,11 +4,11 @@ import static java.lang.Math.pow;
 
 public class FunctionLogics {
 
-    private static double countValueOnFirstPlot(double x) {
+    public static double countValueOnFirstPlot(double x) {
         return (-pow(x, 2) + 3 * x + 9);
     }
 
-    private static double countValueOnSecondPlot(double x) {
+    public static double countValueOnSecondPlot(double x) {
         return (1 / (pow(x, 3) - 6));
     }
 
