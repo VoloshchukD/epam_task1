@@ -19,7 +19,6 @@ public class GeometryLogics {
         return compareResult == 0 ?
                 "точки на равном расстоянии" :
                 compareResult > 0 ? "2я" : "1я";
-
     }
 
 }
