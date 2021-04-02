@@ -15,10 +15,7 @@ public class Runner {
         double h = DataScanner.enterDoubleFromConsole();
 
         Map<Double, Double> result = FunctionLogics.calculateFunctionValues(a, b, h);
-        printResult(result);
+        System.out.println(FunctionLogics.resultToString(result));
     }
 
-    public static void printResult(Map<Double, Double> result) {
-        result.forEach((k, v) -> System.out.printf(k + " %.3f %n", v));
-    }
 }
