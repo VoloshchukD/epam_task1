@@ -8,7 +8,7 @@ public class YearsLogics {
 
     public static final int DIVIDER3 = 400;
 
-    public static int countDaysInMonthByYearAndMonthNumber(int year, MonthType monthType) {
+    public static int countDaysInMonth(int year, MonthType monthType) {
         int days = 0;
         switch (monthType) {
             case THIRTY_ONE_DAY:

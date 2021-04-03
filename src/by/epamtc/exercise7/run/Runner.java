@@ -10,7 +10,7 @@ public class Runner {
         Point point2 = createPoint();
 
         int comparationResult = GeometryLogics.comparePointsСoordinates(point1, point2);
-        String resultAsString = GeometryLogics.makeResultString(comparationResult);
+        String resultAsString = GeometryLogics.resultToString(comparationResult);
         System.out.println(resultAsString);
     }
 

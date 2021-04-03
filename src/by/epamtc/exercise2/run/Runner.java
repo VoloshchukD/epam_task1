@@ -18,11 +18,11 @@ public class Runner {
             monthNumber = DataScanner.enterIntFromConsole();
         } while (!(monthNumber > 0 && monthNumber <= 12));
 
-        int result = YearsLogics.countDaysInMonthByYearAndMonthNumber(year, makeMonthTypeEnum(monthNumber));
+        int result = YearsLogics.countDaysInMonth(year, numberToEnum(monthNumber));
         System.out.println("Число дней в месяце данного года: " + result);
     }
 
-    public static MonthType makeMonthTypeEnum(int monthNumber) {
+    public static MonthType numberToEnum(int monthNumber) {
         MonthType monthType;
         switch (monthNumber) {
             case 4:

@@ -12,7 +12,7 @@ public class BooleanLogics {
         return evenNumbersCounter;
     }
 
-    public static boolean checkEvenNumbersCondition(int[] inputNumbers) {
+    public static boolean isEvenNumbers(int[] inputNumbers) {
         int evenNumbersAmount = countEvenNumbers(inputNumbers);
         boolean result = false;
         if (evenNumbersAmount >= 2) {

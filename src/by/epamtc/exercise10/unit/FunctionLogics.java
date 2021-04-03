@@ -10,19 +10,19 @@ public class FunctionLogics {
     public static Map<Double, Double> calculateFunctionValues(double lowerBorder, double upperBorder, double step) {
         Map<Double, Double> result = new LinkedHashMap<>();
 
-        BigDecimal lowerBorderExact = toBigDecimal(lowerBorder);
-        BigDecimal upperBorderExact = toBigDecimal(upperBorder);
-        BigDecimal stepExact = toBigDecimal(step);
+        BigDecimal lowerBorderExact = doubleToBigDecimal(lowerBorder);
+        BigDecimal upperBorderExact = doubleToBigDecimal(upperBorder);
+        BigDecimal stepExact = doubleToBigDecimal(step);
 
         while (lowerBorderExact.compareTo(upperBorderExact) <= 0) {
-            BigDecimal resultValue = toBigDecimal(Math.tan(lowerBorderExact.doubleValue()));
+            BigDecimal resultValue = doubleToBigDecimal(Math.tan(lowerBorderExact.doubleValue()));
             result.put(lowerBorderExact.doubleValue(), resultValue.doubleValue());
             lowerBorderExact = lowerBorderExact.add(stepExact);
         }
         return result;
     }
 
-    public static BigDecimal toBigDecimal(double number) {
+    public static BigDecimal doubleToBigDecimal(double number) {
         MathContext mathContext = new MathContext(15);
         BigDecimal bigDecimal = new BigDecimal(number, mathContext);
         bigDecimal = bigDecimal.setScale(2, BigDecimal.ROUND_DOWN);

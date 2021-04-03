@@ -3,7 +3,6 @@ package by.epamtc.exercise10.run;
 import by.epamtc.scanner.DataScanner;
 import by.epamtc.exercise10.unit.FunctionLogics;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Runner {

@@ -16,7 +16,7 @@ public class Runner {
 
         int[] inputData = {numberA, numberB, numberD, numberC};
 
-        boolean result = BooleanLogics.checkEvenNumbersCondition(inputData);
+        boolean result = BooleanLogics.isEvenNumbers(inputData);
         System.out.println("Ответ: " + result);
     }
 }

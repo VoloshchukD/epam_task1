@@ -2,7 +2,7 @@ package by.epamtc.exercise5.unit;
 
 public class DividerLogics {
 
-    public static int findAllDividersSum(int number) {
+    public static int countDividersSum(int number) {
         int sum = 0;
         for (int i = 1; i < number; i++) {
             if (number % i == 0) {
@@ -14,7 +14,7 @@ public class DividerLogics {
 
     public static boolean isPerfectNumber(int number) {
         boolean isPerfect = false;
-        if (number == findAllDividersSum(number)) {
+        if (number == countDividersSum(number)) {
             isPerfect = true;
         }
         return isPerfect;
