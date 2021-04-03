@@ -46,7 +46,8 @@ public class TimeFormat {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TimeFormat that = (TimeFormat) o;
-        return hours == that.hours && minutes == that.minutes && seconds == that.seconds;
+        return hours == that.hours && minutes == that.minutes
+                && seconds == that.seconds;
     }
 
     @Override

@@ -7,7 +7,12 @@ import java.util.Map;
 
 public class FunctionLogics {
 
-    public static Map<Double, Double> calculateFunctionValues(double lowerBorder, double upperBorder, double step) {
+    public static int PRECISION = 15;
+
+    public static int SCALE = 3;
+
+    public static Map<Double, Double> calculateFunctionValues(double lowerBorder, double upperBorder,
+                                                              double step) {
         Map<Double, Double> result = new LinkedHashMap<>();
 
         BigDecimal lowerBorderExact = doubleToBigDecimal(lowerBorder);
@@ -23,9 +28,9 @@ public class FunctionLogics {
     }
 
     public static BigDecimal doubleToBigDecimal(double number) {
-        MathContext mathContext = new MathContext(15);
+        MathContext mathContext = new MathContext(PRECISION);
         BigDecimal bigDecimal = new BigDecimal(number, mathContext);
-        bigDecimal = bigDecimal.setScale(2, BigDecimal.ROUND_DOWN);
+        bigDecimal = bigDecimal.setScale(SCALE, BigDecimal.ROUND_DOWN);
         return bigDecimal;
     }
 
