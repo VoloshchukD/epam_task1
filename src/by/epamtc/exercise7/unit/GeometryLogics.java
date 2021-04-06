@@ -13,8 +13,7 @@ public class GeometryLogics {
     }
 
     public static String resultToString(int compareResult) {
-        return compareResult == 0 ?
-                "точки на равном расстоянии" :
+        return compareResult == 0 ? "точки на равном расстоянии" :
                 compareResult > 0 ? "2я точка ближе" : "1я точка ближе";
     }
 

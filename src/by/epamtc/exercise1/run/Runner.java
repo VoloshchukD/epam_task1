@@ -8,7 +8,7 @@ public class Runner {
         System.out.println("Введите число: ");
         int number = DataScanner.enterIntFromConsole();
 
-        int result = CalculationLogics.calculateLastDigitOfSquaredNumber(number);
+        int result = CalculationLogics.calculateLastSquaredDigit(number);
         System.out.println("Последняя цифра квадрата числа: " + result);
     }
 }

@@ -1,37 +1,26 @@
 package by.epamtc.exercise10.unit;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FunctionLogics {
 
-    public static int PRECISION = 15;
-
-    public static int SCALE = 3;
-
     public static Map<Double, Double> calculateFunctionValues(double lowerBorder, double upperBorder,
                                                               double step) {
         Map<Double, Double> result = new LinkedHashMap<>();
 
-        BigDecimal lowerBorderExact = doubleToBigDecimal(lowerBorder);
-        BigDecimal upperBorderExact = doubleToBigDecimal(upperBorder);
-        BigDecimal stepExact = doubleToBigDecimal(step);
+        BigDecimal lowerBorderExact = BigDecimalLogics.doubleToBigDecimal(lowerBorder);
+        BigDecimal upperBorderExact = BigDecimalLogics.doubleToBigDecimal(upperBorder);
+        BigDecimal stepExact = BigDecimalLogics.doubleToBigDecimal(step);
 
         while (lowerBorderExact.compareTo(upperBorderExact) <= 0) {
-            BigDecimal resultValue = doubleToBigDecimal(Math.tan(lowerBorderExact.doubleValue()));
+            BigDecimal resultValue = BigDecimalLogics.doubleToBigDecimal(Math.tan(
+                    lowerBorderExact.doubleValue()));
             result.put(lowerBorderExact.doubleValue(), resultValue.doubleValue());
             lowerBorderExact = lowerBorderExact.add(stepExact);
         }
         return result;
-    }
-
-    public static BigDecimal doubleToBigDecimal(double number) {
-        MathContext mathContext = new MathContext(PRECISION);
-        BigDecimal bigDecimal = new BigDecimal(number, mathContext);
-        bigDecimal = bigDecimal.setScale(SCALE, BigDecimal.ROUND_DOWN);
-        return bigDecimal;
     }
 
     public static String resultToString(Map<Double, Double> result) {

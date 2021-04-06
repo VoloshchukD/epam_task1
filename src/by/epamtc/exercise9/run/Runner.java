@@ -5,8 +5,11 @@ import by.epamtc.exercise9.unit.CircleLogics;
 
 public class Runner {
     public static void main(String[] args) {
-        System.out.println("Введите радиус: ");
-        double r = DataScanner.enterDoubleFromConsole();
+        System.out.println("Введите радиус r: ");
+        double r;
+        do {
+            r = DataScanner.enterDoubleFromConsole();
+        } while (r <= 0);
 
         double square = CircleLogics.countSquare(r);
         double circumference = CircleLogics.countСircumference(r);

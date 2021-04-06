@@ -61,10 +61,9 @@ public class TimeFormat {
 
     @Override
     public String toString() {
-        return getClass().getName() + "{" +
-                "hours=" + hours +
-                ", minutes=" + minutes +
-                ", seconds=" + seconds +
-                '}';
+        return getClass().getName() + "@" +
+                "hours: " + hours +
+                ", minutes: " + minutes +
+                ", seconds: " + seconds;
     }
 }
