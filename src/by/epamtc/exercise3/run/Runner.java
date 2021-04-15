@@ -1,15 +1,14 @@
 package by.epamtc.exercise3.run;
 
+import by.epamtc.exercise3.exception.InvalidRadiusValueException;
+import by.epamtc.exercise3.exception.InvalidSquareValueException;
 import by.epamtc.scanner.DataScanner;
 import by.epamtc.exercise3.unit.GeometryLogics;
 
 public class Runner {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidSquareValueException, InvalidRadiusValueException {
         System.out.println("Площадь квадрата: ");
-        double squareArea;
-        do {
-            squareArea = DataScanner.enterDoubleFromConsole();
-        } while (squareArea <= 0);
+        double squareArea = DataScanner.enterDoubleFromConsole();
 
         double circleRadius = GeometryLogics.countCircleInSquareRadius(squareArea);
         double innerSquareArea = GeometryLogics.countSquareInCircleArea(circleRadius);

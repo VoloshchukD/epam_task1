@@ -1,12 +1,14 @@
 package by.epamtc.exercise10.run;
 
+import by.epamtc.exercise10.exception.InvalidRangeException;
+import by.epamtc.exercise10.exception.InvalidStepException;
 import by.epamtc.scanner.DataScanner;
 import by.epamtc.exercise10.unit.FunctionLogics;
 
 import java.util.Map;
 
 public class Runner {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidStepException, InvalidRangeException {
         System.out.println("Введите начальное и конечное значение отрезка: ");
         double a = DataScanner.enterDoubleFromConsole();
         double b = DataScanner.enterDoubleFromConsole();

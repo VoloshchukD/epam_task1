@@ -1,5 +1,9 @@
 package by.epamtc.exercise2.unit;
 
+import by.epamtc.exercise2.exception.InvalidMonthValueException;
+import by.epamtc.exercise2.exception.InvalidYearValueException;
+import by.epamtc.exercise2.exception.NullMonthTypeException;
+
 public class YearsLogics {
 
     public static final int DIVIDER1 = 4;
@@ -8,7 +12,10 @@ public class YearsLogics {
 
     public static final int DIVIDER3 = 400;
 
-    public static int countDaysInMonth(int year, MonthType monthType) {
+    public static int countDaysInMonth(int year, MonthType monthType) throws InvalidYearValueException, NullMonthTypeException {
+        if (year < 0) throw new InvalidYearValueException("Month value is wrong");
+        if (monthType == null) throw new NullMonthTypeException("MonthType is not initialized");
+
         int days = 0;
         switch (monthType) {
             case THIRTY_ONE_DAY:
@@ -26,6 +33,26 @@ public class YearsLogics {
 
     public static boolean isLeapYear(int year) {
         return ((year % DIVIDER1 == 0) && !(year % DIVIDER2 == 0)) || (year % DIVIDER3 == 0);
+    }
+
+    public static MonthType numberToEnum(int monthNumber) throws InvalidMonthValueException {
+        if (!(monthNumber > 0 && monthNumber <= 12)) throw new InvalidMonthValueException("Month value is wrong");
+
+        MonthType monthType;
+        switch (monthNumber) {
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                monthType = MonthType.THIRTY_DAY;
+                break;
+            case 2:
+                monthType = MonthType.VARIABLE_DAY;
+                break;
+            default:
+                monthType = MonthType.THIRTY_ONE_DAY;
+        }
+        return monthType;
     }
 
 }

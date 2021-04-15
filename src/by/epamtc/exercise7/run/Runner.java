@@ -1,11 +1,12 @@
 package by.epamtc.exercise7.run;
 
+import by.epamtc.exercise7.exception.NullPointExceptionException;
 import by.epamtc.scanner.DataScanner;
 import by.epamtc.exercise7.unit.GeometryLogics;
 import by.epamtc.exercise7.unit.Point;
 
 public class Runner {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NullPointExceptionException {
         Point point1 = createPoint();
         Point point2 = createPoint();
 
