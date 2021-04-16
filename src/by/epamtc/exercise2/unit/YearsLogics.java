@@ -4,13 +4,15 @@ import by.epamtc.exercise2.exception.InvalidMonthValueException;
 import by.epamtc.exercise2.exception.InvalidYearValueException;
 import by.epamtc.exercise2.exception.NullMonthTypeException;
 
+import java.util.NoSuchElementException;
+
 public class YearsLogics {
 
-    public static final int DIVIDER1 = 4;
+    public static final int LEAP_YEAR_FREQUENCY = 4;
 
-    public static final int DIVIDER2 = 100;
+    public static final int LEAP_YEAR_CORRECTION_DIVIDER = 100;
 
-    public static final int DIVIDER3 = 400;
+    public static final int LEAP_YEAR_CORRECTION_FREQUENCY = 400;
 
     public static int countDaysInMonth(int year, MonthType monthType) throws InvalidYearValueException, NullMonthTypeException {
         if (year < 0) throw new InvalidYearValueException("Month value is wrong");
@@ -32,7 +34,7 @@ public class YearsLogics {
     }
 
     public static boolean isLeapYear(int year) {
-        return ((year % DIVIDER1 == 0) && !(year % DIVIDER2 == 0)) || (year % DIVIDER3 == 0);
+        return ((year % LEAP_YEAR_FREQUENCY == 0) && !(year % LEAP_YEAR_CORRECTION_DIVIDER == 0)) || (year % LEAP_YEAR_CORRECTION_FREQUENCY == 0);
     }
 
     public static MonthType numberToEnum(int monthNumber) throws InvalidMonthValueException {

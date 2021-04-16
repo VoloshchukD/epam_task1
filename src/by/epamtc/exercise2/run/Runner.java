@@ -3,7 +3,6 @@ package by.epamtc.exercise2.run;
 import by.epamtc.exercise2.exception.InvalidMonthValueException;
 import by.epamtc.exercise2.exception.InvalidYearValueException;
 import by.epamtc.exercise2.exception.NullMonthTypeException;
-import by.epamtc.exercise2.unit.MonthType;
 import by.epamtc.exercise2.unit.YearsLogics;
 import by.epamtc.scanner.DataScanner;
 
@@ -13,10 +12,7 @@ public class Runner {
         int year = DataScanner.enterIntFromConsole();
 
         System.out.println("Введите номер месяца: ");
-        int monthNumber;
-        do {
-            monthNumber = DataScanner.enterIntFromConsole();
-        } while (!(monthNumber > 0 && monthNumber <= 12));
+        int monthNumber = DataScanner.enterIntFromConsole();
 
         int result = YearsLogics.countDaysInMonth(year, YearsLogics.numberToEnum(monthNumber));
         System.out.println("Число дней в месяце данного года: " + result);
