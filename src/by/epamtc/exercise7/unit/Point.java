@@ -1,8 +1,11 @@
 package by.epamtc.exercise7.unit;
 
-import java.util.Objects;
+import java.io.Serializable;
 
-public class Point {
+public class Point implements Serializable {
+
+    public Point() {
+    }
 
     public Point(int x, int y) {
         this.x = x;

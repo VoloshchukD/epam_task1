@@ -3,8 +3,12 @@ package by.epamtc.exercise5.unit;
 public class DividerLogics {
 
     public static int countDividersSum(int number) {
-        int sum = 0;
-        for (int i = 1; i < number; i++) {
+        int sum = 1;
+        int rootOfNumber = (int) Math.sqrt(number);
+        for (int i = 2; i < number; i++) {
+            if (i > rootOfNumber && sum == 1) {
+                break;
+            }
             if (number % i == 0) {
                 sum += i;
             }

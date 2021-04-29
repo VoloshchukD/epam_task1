@@ -10,9 +10,8 @@ public class Runner {
         Point point1 = createPoint();
         Point point2 = createPoint();
 
-        int comparationResult = GeometryLogics.comparePointsСoordinates(point1, point2);
-        String resultAsString = GeometryLogics.resultToString(comparationResult);
-        System.out.println(resultAsString);
+        Point closerPoint = GeometryLogics.comparePointsСoordinates(point1, point2);
+        System.out.println("точка " + closerPoint.toString() + " ближе");
     }
 
     public static Point createPoint() {
